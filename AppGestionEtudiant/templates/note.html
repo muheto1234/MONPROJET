@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter une note</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #dc3545;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #5043c7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ajouter une note</h1>
+    <form method="POST" action="{% url 'create_note' %}" class="container">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="Nom">Nom :</label>
+            <input type="text" name="Nom" id="Nom" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="PrenomEtudiant">Prenom :</label>
+            <input type="text" name="PrenomEtudiant" id="PrenomEtudiant" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Matricule">Matricule :</label>
+            <input type="text" name="Matricule" id="Matricule" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cours">Cours :</label>
+            <input type="text" name="cours" id="cours" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="note">Note :</label>
+            <input type="text" name="note" id="note" class="form-control">
+        </div>
+        <input type="submit" value="Ajouter" class="btn btn-primary">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Ajoutez ici votre code JavaScript personnalisé si nécessaire
+    </script>
+</body>
+</html>

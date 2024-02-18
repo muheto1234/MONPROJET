@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion des utilisateurs</title>
+</head>
+<body>
+    <h1>Liste des utilisateurs</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Utilisateur</th>
+                <th>Enseignant</th>
+                <th>Etudiant</th>
+                <th>Actions</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.is_enseignant }}</td>
+                <td>{{ user.is_ettudiant }}</td>
+                
+                
+                <td>
+                    <button><a href="{% url 'update_roles' user.id %}">Update</a></button>
+                </td>
+            </tr>
+            {% endfor %}
+            <button><a href="{% url 'acceuil' %}">Retourner</a></button>
+        </table>
+    </form>
+</body>
+</html>
